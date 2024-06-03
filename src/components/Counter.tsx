@@ -1,8 +1,7 @@
-import { useState } from "react";
 import CounterButtons from "./CounterButtons";
+import ShowCount from "./ShowCount";
 
 export default function Counter() {
-  const [count, setCount] = useState<number>(0);
   return (
     <div
       style={{
@@ -16,9 +15,9 @@ export default function Counter() {
         border: "2px solid black",
       }}
     >
-      {count}
+      <ShowCount />
       <div>
-        <CounterButtons count={count} setCount = {setCount}/>
+        <CounterButtons />
       </div>
     </div>
   );

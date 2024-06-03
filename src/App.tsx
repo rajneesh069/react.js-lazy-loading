@@ -11,37 +11,39 @@ function App() {
   // const [count, setCount] = useState<number>(0);
   return (
     <div>
-      <BrowserRouter>
-        <Appbar />
-        <Routes>
-          <Route
-            element={
-              <Suspense fallback={<Loading />}>
-                <Dashboard />
-              </Suspense>
-            }
-            path="/dashboard"
-          />
-          <Route
-            element={
-              <Suspense fallback={<Loading />}>
-                <Landing />
-              </Suspense>
-            }
-            path="/"
-          />
-          <Route
-            path="/counter"
-            element={
-              <RecoilRoot>
-                {/* <CountContext.Provider value={{ count, setCount }}> */}
-                <Counter />
-                {/* </CountContext.Provider> */}
-              </RecoilRoot>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <RecoilRoot>
+        <BrowserRouter>
+          <Appbar />
+          <Routes>
+            <Route
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Dashboard />
+                </Suspense>
+              }
+              path="/dashboard"
+            />
+            <Route
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Landing />
+                </Suspense>
+              }
+              path="/"
+            />
+            <Route
+              path="/counter"
+              element={
+                <div>
+                  {/* <CountContext.Provider value={{ count, setCount }}> */}
+                  <Counter />
+                  {/* </CountContext.Provider> */}
+                </div>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </RecoilRoot>
     </div>
   );
 }

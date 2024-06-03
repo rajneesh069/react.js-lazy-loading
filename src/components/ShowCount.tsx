@@ -11,7 +11,7 @@ export default function ShowCount() {
   // const count = useRecoilValue(countAtom);
   const isEven = useRecoilValue(evenSelector);
   return (
-    <div>
+    <div style={{ display: "flex", gap: 4 }}>
       <p>{count}</p>
       <p>{!isEven ? "This is even" : null}</p>
     </div>

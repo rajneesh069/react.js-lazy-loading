@@ -16,9 +16,7 @@ export default function Counter() {
       }}
     >
       <ShowCount />
-      <div>
-        <CounterButtons />
-      </div>
+      <CounterButtons />
     </div>
   );
 }

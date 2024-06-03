@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { toDo, todos } from "../store/selectors/todoSelectors";
 import { todo, todoAtom } from "../store/atoms/todoAtom";
 
@@ -19,7 +19,7 @@ export default function ShowToDo() {
 }
 
 function TodoCard({ id, todo }: { id: string | null; todo: todo }) {
-  const [todos, setTodos] = useRecoilState(todoAtom);
+  const setTodos = useSetRecoilState(todoAtom);
   return (
     <div
       style={{
@@ -34,7 +34,7 @@ function TodoCard({ id, todo }: { id: string | null; todo: todo }) {
       <p>title : {todo.title}</p> <p> description : {todo.description}</p>
       <button
         onClick={() => {
-          setTodos(todos.filter((todo) => todo.id !== id));
+          setTodos((todos) => todos.filter((todo) => todo.id !== id));
         }}
       >
         Delete ToDo

@@ -1,7 +1,19 @@
-import { useContext } from "react";
-import { CountContext } from "./CounterContext";
+// import { useContext } from "react";
+// import { CountContext } from "./CounterContext";
+
+import { useRecoilValue } from "recoil";
+// import { countAtom } from "../store/atoms/countAtom";
+import { countSelector, evenSelector } from "../store/selectors/countSelector";
 
 export default function ShowCount() {
-  const { count } = useContext(CountContext);
-  return <div>{count}</div>;
+  // const { count } = useContext(CountContext);
+  const count = useRecoilValue(countSelector);
+  // const count = useRecoilValue(countAtom);
+  const isEven = useRecoilValue(evenSelector);
+  return (
+    <div>
+      <p>{count}</p>
+      <p>{!isEven ? "This is even" : null}</p>
+    </div>
+  );
 }

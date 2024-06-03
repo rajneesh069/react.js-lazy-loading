@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const Landing = lazy(() => import("./components/Landing"));
 import Appbar from "./components/Appbar";
 import Loading from "./components/Loading";
 import Counter from "./components/Counter";
-import { CountContext } from "./components/CounterContext";
+// import { CountContext } from "./components/CounterContext";
+import { RecoilRoot } from "recoil";
 function App() {
-  const [count, setCount] = useState<number>(0);
+  // const [count, setCount] = useState<number>(0);
   return (
     <div>
       <BrowserRouter>
@@ -32,9 +33,11 @@ function App() {
           <Route
             path="/counter"
             element={
-              <CountContext.Provider value={{ count, setCount }}>
+              <RecoilRoot>
+                {/* <CountContext.Provider value={{ count, setCount }}> */}
                 <Counter />
-              </CountContext.Provider>
+                {/* </CountContext.Provider> */}
+              </RecoilRoot>
             }
           />
         </Routes>

@@ -22,3 +22,5 @@ yarn run dev
 #or
 pnpm run dev
 ```
+
+`CountContext` or `ContextObject` could be a very complex object, including setState functions and stuff.

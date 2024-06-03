@@ -3,7 +3,7 @@
 
 import { useRecoilValue } from "recoil";
 // import { countAtom } from "../store/atoms/countAtom";
-import { countSelector, evenSelector } from "../store/selectors/countSelector";
+import { countSelector, evenSelector } from "../store/selectors/countSelectors";
 
 export default function ShowCount() {
   // const { count } = useContext(CountContext);

@@ -21,7 +21,7 @@ export default function Appbar() {
       >
         Landing
       </button>
-      
+
       <button
         onClick={() => {
           navigate("/dashboard");
@@ -36,6 +36,14 @@ export default function Appbar() {
         }}
       >
         Counter
+      </button>
+
+      <button
+        onClick={() => {
+          navigate("/todo");
+        }}
+      >
+        To Do
       </button>
     </div>
   );

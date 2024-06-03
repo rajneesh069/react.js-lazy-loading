@@ -7,6 +7,8 @@ import Loading from "./components/Loading";
 import Counter from "./components/Counter";
 // import { CountContext } from "./components/CounterContext";
 import { RecoilRoot } from "recoil";
+import Todo from "./components/Todo";
+
 function App() {
   // const [count, setCount] = useState<number>(0);
   return (
@@ -41,6 +43,7 @@ function App() {
                 </div>
               }
             />
+            <Route element={<Todo />} path="/todo" />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

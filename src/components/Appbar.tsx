@@ -10,10 +10,18 @@ export default function Appbar() {
         display: "flex",
         gap: 5,
         justifyContent: "center",
-        padding: 3,
+        padding: 1,
       }}
     >
       <p>This is the Appbar.</p>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Landing
+      </button>
+      
       <button
         onClick={() => {
           navigate("/dashboard");
@@ -21,12 +29,13 @@ export default function Appbar() {
       >
         Dashboard
       </button>
+
       <button
         onClick={() => {
-          navigate("/");
+          navigate("/counter");
         }}
       >
-        Landing
+        Counter
       </button>
     </div>
   );

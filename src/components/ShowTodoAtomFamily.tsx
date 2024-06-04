@@ -1,4 +1,4 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValueLoadable } from "recoil";
 import { todosAtoms } from "../store/atoms/todoAtom";
 
 export default function ShowToDoAtomFamily() {
@@ -19,18 +19,33 @@ export default function ShowToDoAtomFamily() {
 }
 
 function Todo({ id }: { id: number }) {
-  const todo = useRecoilValue(todosAtoms(id));
-  return (
-    <div
-      style={{
-        border: "2px solid black",
-        display: "flex",
-        flexDirection: "column",
-        gap: 3,
-      }}
-    >
-      <p>{todo && todo.title}</p>
-      <p> {todo && todo.description}</p>
-    </div>
-  );
+  const todo = useRecoilValueLoadable(todosAtoms(id)); //this makes async more proper
+  if (todo.state === "hasValue") {
+    return (
+      <div
+        style={{
+          border: "2px solid black",
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+        }}
+      >
+        <p>{todo && todo.contents.title}</p>
+        <p> {todo && todo.contents.description}</p>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        style={{
+          border: "2px solid black",
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+        }}
+      >
+        Loading
+      </div>
+    );
+  }
 }

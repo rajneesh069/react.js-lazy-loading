@@ -45,6 +45,14 @@ export default function Appbar() {
       >
         To Do
       </button>
+
+      <button
+        onClick={() => {
+          navigate("/linkedin");
+        }}
+      >
+        LinkedIn
+      </button>
     </div>
   );
 }

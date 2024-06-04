@@ -1,21 +1,18 @@
 import { atom } from "recoil";
 
-export const notificationCountAtom = atom({
-  key: "notificationCountAtom",
-  default: 12,
-});
+export interface notificationsState {
+  network: number;
+  jobs: number;
+  messaging: number;
+  notifications: number;
+}
 
-export const networkCountAtom = atom({
-  key: "networkCountAtom",
-  default: 102,
-});
-
-export const messageCountAtom = atom({
-  key: "messageCountAtom",
-  default: 0,
-});
-
-export const jobCountAtom = atom({
-  key: "jobCountAtom",
-  default: 0,
+export const notificationsAtom = atom<notificationsState>({
+  key: "notificationsAtom",
+  default: {
+    network: 0,
+    jobs: 0,
+    messaging: 0,
+    notifications: 0,
+  },
 });

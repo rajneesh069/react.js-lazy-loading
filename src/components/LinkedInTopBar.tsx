@@ -6,6 +6,18 @@ export default function LinkedInTopBar() {
   const notificationsCount = useRecoilValue(notificationsAtom);
   const totalNotificationCount = useRecoilValue(totalNotificationCountSelector);
 
+  // useEffect(() => {
+  //   async function main() {
+  //     const response = await axios.get("http://localhost:8080/linkedin", {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     setNotificationsCount(response.data);
+  //   }
+  //   main();
+  // }, [setNotificationsCount]);
+
   return (
     <div style={{ padding: 2, display: "flex", gap: 2 }}>
       <button>Home </button>

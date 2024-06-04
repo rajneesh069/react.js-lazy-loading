@@ -1,25 +1,10 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { notificationsAtom } from "../store/atoms/linkedInAtoms";
 import { totalNotificationCountSelector } from "../store/selectors/linkedInSelectors";
-import { useEffect } from "react";
-import axios from "axios";
 
 export default function LinkedInTopBar() {
-  const [notificationsCount, setNotificationsCount] =
-    useRecoilState(notificationsAtom);
+  const notificationsCount = useRecoilValue(notificationsAtom);
   const totalNotificationCount = useRecoilValue(totalNotificationCountSelector);
-
-  useEffect(() => {
-    async function main() {
-      const response = await axios.get("http://localhost:8080/linkedin", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setNotificationsCount(response.data);
-    }
-    main();
-  }, [setNotificationsCount]);
 
   return (
     <div style={{ padding: 2, display: "flex", gap: 2 }}>

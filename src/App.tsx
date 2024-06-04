@@ -9,6 +9,7 @@ import Counter from "./components/Counter";
 import { RecoilRoot } from "recoil";
 import Todo from "./components/Todo";
 import LinkedInTopBar from "./components/LinkedInTopBar";
+import ShowToDoAtomFamily from "./components/ShowTodoAtomFamily";
 
 function App() {
   // const [count, setCount] = useState<number>(0);
@@ -46,6 +47,7 @@ function App() {
             />
             <Route element={<Todo />} path="/todo" />
             <Route element={<LinkedInTopBar />} path="/linkedin" />
+            <Route element={<ShowToDoAtomFamily />} path="/atomFamily" />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>

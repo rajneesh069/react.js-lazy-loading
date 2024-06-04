@@ -53,6 +53,14 @@ export default function Appbar() {
       >
         LinkedIn
       </button>
+
+      <button
+        onClick={() => {
+          navigate("/atomFamily");
+        }}
+      >
+        Atom Family Demo
+      </button>
     </div>
   );
 }

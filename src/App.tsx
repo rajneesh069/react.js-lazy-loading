@@ -46,7 +46,14 @@ function App() {
               }
             />
             <Route element={<Todo />} path="/todo" />
-            <Route element={<LinkedInTopBar />} path="/linkedin" />
+            <Route
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LinkedInTopBar />
+                </Suspense>
+              }
+              path="/linkedin"
+            />
             <Route element={<ShowToDoAtomFamily />} path="/atomFamily" />
           </Routes>
         </BrowserRouter>

@@ -33,8 +33,16 @@ export const todosAtoms = atomFamily({
   default: selectorFamily({
     key: "todoAtoms/default",
     get: (id) => async () => {
+      // const response = await axios.get(
+      //   `http://localhost:8080/todo?id=${String(id)}`,
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   }
+      // );
       const response = await axios.get(
-        `http://localhost:8080/todo?id=${String(id)}`,
+        `https://dummy-server-for-react-js-lazy-loading.onrender.com/todo?id=${String(id)}`,
         {
           headers: {
             "Content-Type": "application/json",

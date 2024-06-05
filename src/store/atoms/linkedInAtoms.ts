@@ -23,11 +23,19 @@ export const notificationsAtom = atom<notificationsState>({
   default: selector({
     key: "notificationsAtom/default",
     get: async () => {
-      const response = await axios.get("http://localhost:8080/linkedin", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      // const response = await axios.get("http://localhost:8080/linkedin", {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const response = await axios.get(
+        "https://dummy-server-for-react-js-lazy-loading.onrender.com/linkedin",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       return response.data;
     },
   }),
